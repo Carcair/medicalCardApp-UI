@@ -1,15 +1,20 @@
-<div fxLayout="column">
-  <!-- column: stacking childrend vertically -->
-
-  <div fxLayout="row">
-    <div fxFlex="10" class="branding">
-      <h3>B</h3>
-    </div>
-
-    <div fxFlex="70">
-      <input type="text" placeholder="Input something" />
-    </div>
-  </div>
-
-  <div fxLayout="row"></div>
+<div>
+  <mat-drawer-container class="main-app">
+    <mat-drawer #mainNav mode="over" class="sidebar">
+      <div
+        class="navigation-buttons"
+        fxLayout="column"
+        fxLayoutAlign="space-around stretch"
+        fxLayoutGap="2rem"
+      >
+        <button mat-button mat-raised-button color="primary">Home</button>
+        <button mat-button mat-raised-button color="primary">Patient</button>
+        <button mat-button mat-raised-button color="primary">Diagnosis</button>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (navToggle)="mainNav.toggle()"></app-header>
+      <h1>test main</h1>
+    </mat-drawer-content>
+  </mat-drawer-container>
 </div>

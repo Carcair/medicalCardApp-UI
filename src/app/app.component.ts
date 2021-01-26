@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +6,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
+  opened: boolean = false;
 
-  constructor(
-  ) {}
+  constructor() {}
 
   // Methods
   ngOnInit() {}
