@@ -1,0 +1,16 @@
+.description {
+  height: 30rem;
+  width: 20rem;
+  margin-top: 3rem;
+  border-radius: 1rem;
+  background-color: rgba(100, 149, 237, 0.9);
+  padding: 2rem;
+  font-size: 1rem;
+}
+.login {
+  height: 30rem;
+  width: 20rem;
+  margin-top: 3rem;
+  border-radius: 1rem;
+  background-color: rgba(211, 211, 211, 0.9);
+}

@@ -8,11 +8,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './core/material.module';
 import { HeaderComponent } from './components/header/header.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
+import { PatientComponent } from './components/patient/patient.component';
+import { DiagnosisComponent } from './components/diagnosis/diagnosis.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    DiagnosisComponent,
+    PatientComponent
   ],
   imports: [
     BrowserModule,
@@ -21,8 +28,10 @@ import { HeaderComponent } from './components/header/header.component';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

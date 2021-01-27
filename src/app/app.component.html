@@ -7,14 +7,30 @@
         fxLayoutAlign="space-around stretch"
         fxLayoutGap="2rem"
       >
-        <button mat-button mat-raised-button color="primary">Home</button>
-        <button mat-button mat-raised-button color="primary">Patient</button>
-        <button mat-button mat-raised-button color="primary">Diagnosis</button>
+        <button routerLink="/" mat-button mat-raised-button color="primary">
+          Home
+        </button>
+        <button
+          routerLink="/patient"
+          mat-button
+          mat-raised-button
+          color="primary"
+        >
+          Patient
+        </button>
+        <button
+          routerLink="/diagnosis"
+          mat-button
+          mat-raised-button
+          color="primary"
+        >
+          Diagnosis
+        </button>
       </div>
     </mat-drawer>
-    <mat-drawer-content>
+    <mat-drawer-content fxLayout="column" fxLayoutAlign=" none">
       <app-header (navToggle)="mainNav.toggle()"></app-header>
-      <h1>test main</h1>
+      <router-outlet></router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>
 </div>
