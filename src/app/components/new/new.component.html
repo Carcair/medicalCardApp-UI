@@ -1,1 +1,39 @@
-<p>new works!</p>
+<div class="main" fxLayout="row" fxLayoutAlign="center stretch">
+  <div
+    class="add-patient"
+    fxFlex="50"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="1rem"
+  >
+    <button
+      class="button"
+      mat-fab
+      color="primary"
+      aria-label="Example icon button with a delete icon"
+      routerLink="/new_patient"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+    <p class="action">New Patient</p>
+  </div>
+  <mat-divider vertical="true"></mat-divider>
+  <div
+    class="add-diagnosis"
+    fxFlex="50"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="1rem"
+  >
+    <button
+      class="button"
+      mat-fab
+      color="primary"
+      aria-label="Example icon button with a delete icon"
+      routerLink="/new_diagnosis"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+    <p class="action">New Diagnosis</p>
+  </div>
+</div>

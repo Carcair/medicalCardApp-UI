@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { LoginService } from './service/login/login.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,15 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 export class AppComponent implements OnInit, OnDestroy {
   opened: boolean = false;
 
-  constructor() {}
+  constructor(private loginService: LoginService) {}
 
   // Methods
   ngOnInit() {}
 
   ngOnDestroy() {}
+
+  // Logout
+  logout(): void {
+    this.loginService.logout();
+  }
 }

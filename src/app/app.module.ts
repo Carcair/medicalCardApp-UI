@@ -10,9 +10,12 @@ import { MaterialModule } from './core/material.module';
 import { HeaderComponent } from './components/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
-import { PatientComponent } from './components/patient/patient.component';
-import { DiagnosisComponent } from './components/diagnosis/diagnosis.component';
+import { PatientComponent } from './components/review/patient/patient.component';
+import { DiagnosisComponent } from './components/review/diagnosis/diagnosis.component';
 import { NewComponent } from './components/new/new.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NewPatientComponent } from './components/new/new-patient/new-patient.component';
+import { NewDiagnosisComponent } from './components/new/new-diagnosis/new-diagnosis.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { NewComponent } from './components/new/new.component';
     DiagnosisComponent,
     PatientComponent,
     NewComponent,
+    NewPatientComponent,
+    NewDiagnosisComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,8 @@ import { NewComponent } from './components/new/new.component';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   exports: [],
   providers: [],

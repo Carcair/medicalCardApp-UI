@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,8 +15,26 @@ export class PatientService {
   constructor(private http: HttpClient) { }
 
   // Get All patients
+  getPatients() {
+    let token = localStorage.getItem("bearer_token");
+    return this.http.get(
+      '/server/api/v1/patient',
+      {
+        headers: new HttpHeaders().set('Authorization', token)
+      }
+    )
+  }
   
   // Get One patient
+  getPatient(patientId) {
+    let token = localStorage.getItem("bearer_token");
+    return this.http.get(
+      '/server/api/v1/patient/' + patientId,
+      {
+        headers: new HttpHeaders().set("Authorization", token)
+      }
+    )
+  }
 
   // Add new Patient
 

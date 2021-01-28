@@ -3,13 +3,13 @@
     <h2>Patient</h2>
     <div fxLayout="row" fxLayoutAlign="center stretch">
       <div fxFlex="50">
-        <p>Name: {{ patient.firstName }} {{ patient.lastName }}</p>
-        <p>Card number: {{ patient.cardNumber }}</p>
+        <p>Name: {{ patient?.firstName }} {{ patient?.lastName }}</p>
+        <p>Card number: {{ patient?.cardNumber }}</p>
       </div>
       <div fxFlex="50">
-        <p>Address: {{ patient.address }}</p>
-        <p>Phone number: {{ patient.phoneNumber }}</p>
-        <p>Added on: {{ patient.date }}</p>
+        <p>Address: {{ patient?.address }}</p>
+        <p>Phone number: {{ patient?.phoneNumber }}</p>
+        <p>Added on: {{ patient?.date }}</p>
       </div>
     </div>
   </div>
@@ -17,13 +17,16 @@
     <h2>Diagnosis</h2>
     <mat-form-field appearance="fill">
       <mat-label>Date of diagnose</mat-label>
-      <mat-select required [(value)]="selectedDiagnose">
-        <mat-option></mat-option>
+      <mat-select
+        required
+        [(ngModel)]="selectedDiagnoseId"
+        (ngModelChange)="onChange()"
+      >
         <mat-option
-          *ngFor="let diagnos of diagnosis"
-          [value]="diagnos.diagnosisId - 1"
+          *ngFor="let diagnos of diagnosisArr; index as i"
+          [value]="i"
         >
-          {{ diagnos.date }}
+          {{ diagnos?.date }}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -31,14 +34,14 @@
     <div class="diagnose">
       <p>
         Dijagnoza je uzeta na dan:
-        <span>{{ diagnosis[selectedDiagnose].date }}</span>
+        <span>{{ selectedDiagnose?.date }}</span>
       </p>
       <p>
-        Opis: <span>{{ diagnosis[selectedDiagnose].diagnosis }}</span>
+        Opis: <span>{{ selectedDiagnose?.diagnosis }}</span>
       </p>
       <p>
         Preporuka i lijekovi:
-        <span>{{ diagnosis[selectedDiagnose].medicine }}</span>
+        <span>{{ selectedDiagnose?.medicine }}</span>
       </p>
     </div>
   </div>
