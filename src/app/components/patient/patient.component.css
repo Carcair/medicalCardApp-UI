@@ -1,0 +1,36 @@
+.main-patient {
+  min-height: 30rem;
+  height: 80vh;
+  margin-top: 5vh;
+}
+
+.main-patient div {
+  margin-right: 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+table {
+  border-spacing: 0px;
+}
+td {
+  padding: 15px;
+  overflow: scroll;
+}
+
+td,
+th {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  cursor: default;
+}
+td::-webkit-scrollbar,
+th::-webkit-scrollbar {
+  display: none;
+}
+
+th {
+  background-color: rgba(100, 149, 237, 0.7);
+}
+tr:nth-child(odd) {
+  background-color: rgba(211, 211, 211, 0.9);
+}

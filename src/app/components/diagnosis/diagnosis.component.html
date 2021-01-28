@@ -1,1 +1,45 @@
-<p>diagnosis works!</p>
+<div class="diagnosis" fxLayout="column" fxLayoutAlign="start stretch">
+  <div class="basic-info">
+    <h2>Patient</h2>
+    <div fxLayout="row" fxLayoutAlign="center stretch">
+      <div fxFlex="50">
+        <p>Name: {{ patient.firstName }} {{ patient.lastName }}</p>
+        <p>Card number: {{ patient.cardNumber }}</p>
+      </div>
+      <div fxFlex="50">
+        <p>Address: {{ patient.address }}</p>
+        <p>Phone number: {{ patient.phoneNumber }}</p>
+        <p>Added on: {{ patient.date }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="diagnosis-info">
+    <h2>Diagnosis</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Date of diagnose</mat-label>
+      <mat-select required [(value)]="selectedDiagnose">
+        <mat-option></mat-option>
+        <mat-option
+          *ngFor="let diagnos of diagnosis"
+          [value]="diagnos.diagnosisId - 1"
+        >
+          {{ diagnos.date }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="diagnose">
+      <p>
+        Dijagnoza je uzeta na dan:
+        <span>{{ diagnosis[selectedDiagnose].date }}</span>
+      </p>
+      <p>
+        Opis: <span>{{ diagnosis[selectedDiagnose].diagnosis }}</span>
+      </p>
+      <p>
+        Preporuka i lijekovi:
+        <span>{{ diagnosis[selectedDiagnose].medicine }}</span>
+      </p>
+    </div>
+  </div>
+</div>

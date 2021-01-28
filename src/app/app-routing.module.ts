@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DiagnosisComponent } from './components/diagnosis/diagnosis.component';
 import { HomeComponent } from './components/home/home.component';
+import { NewComponent } from './components/new/new.component';
 import { PatientComponent } from './components/patient/patient.component';
 import { MaterialModule } from './core/material.module';
 
@@ -15,11 +16,18 @@ const routes: Routes = [
   },
   {
     path: 'patient',
-    component: PatientComponent
+    component: PatientComponent,
+    children: [
+      {
+        path: 'diagnosis/:patientId',
+        component: DiagnosisComponent,
+        outlet: 'diagnosis'
+      }
+    ]
   },
   {
-    path: 'diagnosis',
-    component: DiagnosisComponent
+    path: 'new',
+    component: NewComponent
   }
 ]
 

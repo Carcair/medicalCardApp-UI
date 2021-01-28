@@ -14,3 +14,7 @@
   border-radius: 1rem;
   background-color: rgba(211, 211, 211, 0.9);
 }
+
+.home {
+  height: auto;
+}

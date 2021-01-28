@@ -1,0 +1,12 @@
+.basic-info,
+.diagnosis-info {
+  padding: 1rem;
+}
+
+.basic-info {
+  height: 8rem;
+}
+
+.diagnosis-info {
+  min-height: 20rem;
+}

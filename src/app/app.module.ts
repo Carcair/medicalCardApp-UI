@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { PatientComponent } from './components/patient/patient.component';
 import { DiagnosisComponent } from './components/diagnosis/diagnosis.component';
+import { NewComponent } from './components/new/new.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DiagnosisComponent } from './components/diagnosis/diagnosis.component';
     HeaderComponent,
     HomeComponent,
     DiagnosisComponent,
-    PatientComponent
+    PatientComponent,
+    NewComponent,
   ],
   imports: [
     BrowserModule,

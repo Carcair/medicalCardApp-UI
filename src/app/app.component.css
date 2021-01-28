@@ -7,8 +7,8 @@
 .main-app {
   height: 100vh;
   width: 100vw;
-  background-image: url("../assets/pexels-anna-shvets-4416539.jpg");
-  background-size: contain;
+  background-image: url("../assets/pexels-gustavo-fring-4173239.jpg");
+  background-size: cover;
 }
 
 .sidebar {

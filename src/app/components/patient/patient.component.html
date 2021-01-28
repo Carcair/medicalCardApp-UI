@@ -1,1 +1,34 @@
-<p>patient works!</p>
+<div class="main-patient" fxLayout="row" fxLayoutAlign="end">
+  <!-- List with all available patients -->
+  <div class="patient-list" fxFlex="25">
+    <table fxLayout="column" fxLayoutAlign="start stretch">
+      <tr fxLayout="row" fxLayoutAlign="start stretch">
+        <th fxFlex="25">Card Number</th>
+        <th fxFlex="25">First name</th>
+        <th fxFlex="25">Last name</th>
+        <th fxFlex="25">Actions</th>
+      </tr>
+      <tr
+        *ngFor="let patient of patients"
+        fxLayout="row"
+        fxLayoutAlign="start stretch"
+        [routerLink]="[
+          '/patient',
+          { outlets: { diagnosis: ['diagnosis', patient.patientId] } }
+        ]"
+        routerLinkActive="router-link-active"
+      >
+        <td fxFlex="25">{{ patient.cardNumber }}</td>
+        <td fxFlex="25">{{ patient.firstName }}</td>
+        <td fxFlex="25">{{ patient.lastName }}</td>
+        <td fxFlex="25">ikonePH</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Selected patient diagnosis -->
+  <div class="patient-info" fxFlex="55">
+    <router-outlet name="diagnosis"></router-outlet>
+    <ng-container></ng-container>
+  </div>
+</div>
