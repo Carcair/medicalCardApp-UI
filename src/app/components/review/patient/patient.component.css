@@ -11,6 +11,7 @@
 
 table {
   border-spacing: 0px;
+  overflow-y: auto;
 }
 td {
   padding: 15px;
@@ -22,6 +23,7 @@ th {
   -ms-overflow-style: none;
   scrollbar-width: none;
   cursor: default;
+  border-bottom: 1px solid black;
 }
 td::-webkit-scrollbar,
 th::-webkit-scrollbar {

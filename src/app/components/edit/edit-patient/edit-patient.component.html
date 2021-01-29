@@ -1,31 +1,36 @@
 <div class="main" fxLayout="column" fxLayoutAlign="center center">
-  <div class="form" fxLayout="column" fxLayoutAlign="center center">
+  <div
+    class="form"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    *ngIf="patient != undefined"
+  >
     <mat-form-field appearance="fill">
       <mat-label>First name</mat-label>
-      <input matInput [(ngModel)]="firstName" />
+      <input matInput [(ngModel)]="patient.firstName" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Last name</mat-label>
-      <input matInput [(ngModel)]="lastName" />
+      <input matInput [(ngModel)]="patient.lastName" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Card number</mat-label>
-      <input matInput [(ngModel)]="cardNumber" />
+      <input matInput [(ngModel)]="patient.cardNumber" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Address</mat-label>
-      <input matInput [(ngModel)]="address" />
+      <input matInput [(ngModel)]="patient.address" />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Phone number</mat-label>
-      <input matInput [(ngModel)]="phoneNumber" />
+      <input matInput [(ngModel)]="patient.phoneNumber" />
     </mat-form-field>
     <button
       class="button"
       mat-raised-button
       color="primary"
       aria-label="Example icon button with a delete icon"
-      (click)="addNewPatient()"
+      (click)="editPatient()"
     >
       Submit
     </button>

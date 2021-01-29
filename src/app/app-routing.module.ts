@@ -8,6 +8,7 @@ import { PatientComponent } from './components/review/patient/patient.component'
 import { MaterialModule } from './core/material.module';
 import { NewPatientComponent } from './components/new/new-patient/new-patient.component';
 import { NewDiagnosisComponent } from './components/new/new-diagnosis/new-diagnosis.component';
+import { EditPatientComponent } from './components/edit/edit-patient/edit-patient.component';
 
 // Possible routes
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'new_patient',
     component: NewPatientComponent
+  },
+  {
+    path: 'edit_patient/:patientId',
+    component: EditPatientComponent
   },
   {
     path: 'new_diagnosis',

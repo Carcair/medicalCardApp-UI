@@ -11,3 +11,8 @@ a {
 button {
   cursor: default;
 }
+
+.button:hover {
+  background-color: cornflowerblue;
+  color: white;
+}

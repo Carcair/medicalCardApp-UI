@@ -1,1 +1,36 @@
-<p>new-diagnosis works!</p>
+<div class="main" fxLayout="column" fxLayoutAlign="center center">
+  <div class="form" fxLayout="column" fxLayoutAlign="center center">
+    <mat-form-field appearance="fill">
+      <mat-label>Select patient</mat-label>
+      <mat-select
+        required
+        [(ngModel)]="selectedPatientId"
+        (ngModelChange)="onChange()"
+      >
+        <mat-option
+          *ngFor="let patient of patients"
+          [value]="patient.patientId"
+        >
+          {{ patient.firstName }} {{ patient.lastName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="textarea" appearance="fill">
+      <mat-label>Diagnosis</mat-label>
+      <textarea rows="5" matInput [(ngModel)]="diagnosis"></textarea>
+    </mat-form-field>
+    <mat-form-field class="textarea" appearance="fill">
+      <mat-label>Prescription</mat-label>
+      <textarea rows="5" matInput [(ngModel)]="prescription"></textarea>
+    </mat-form-field>
+    <button
+      class="button"
+      mat-raised-button
+      color="primary"
+      aria-label="Example icon button with a delete icon"
+      (click)="addNewDiagnosis()"
+    >
+      Submit
+    </button>
+  </div>
+</div>

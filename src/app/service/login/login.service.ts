@@ -25,16 +25,19 @@ export class LoginService {
     );
   }
 
+  // Extract token from response and return "Bearer <token>"
   extractToken(obj): string {
     let token = "Bearer ";
     token += obj.jwt;
     return token;
   }
 
+  // Start session using local storage
   startSession(token: string): void {
     localStorage.setItem("bearer_token", token);
   }
 
+  // Stop session
   logout(): void {
     localStorage.removeItem("bearer_token");
   }

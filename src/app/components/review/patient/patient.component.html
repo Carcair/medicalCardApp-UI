@@ -21,7 +21,22 @@
         <td fxFlex="25">{{ patient.cardNumber }}</td>
         <td fxFlex="25">{{ patient.firstName }}</td>
         <td fxFlex="25">{{ patient.lastName }}</td>
-        <td fxFlex="25">ikonePH</td>
+        <td fxFlex="25" fxLayout="row" fxLayoutAlign="center center">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            [routerLink]="['/edit_patient', patient.patientId]"
+          >
+            edit
+          </mat-icon>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            (click)="deletePatient(patient.patientId)"
+          >
+            delete
+          </mat-icon>
+        </td>
       </tr>
     </table>
   </div>

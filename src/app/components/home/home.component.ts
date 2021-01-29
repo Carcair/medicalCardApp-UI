@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
@@ -10,17 +9,11 @@ import { LoginService } from 'src/app/service/login/login.service';
 export class HomeComponent implements OnInit {
   username: string;
   password: string;
-  loginForm: FormGroup;
 
   constructor(private loginService: LoginService) { }
 
   // Methods
-  ngOnInit(): void {
-    this.loginForm = new FormGroup({
-      username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
-    })
-  }
+  ngOnInit(): void {}
 
   login() {
     let tempObj = {

@@ -19,4 +19,12 @@ export class PatientComponent implements OnInit {
         error => console.log(error)
       )
   }
+
+  deletePatient(patientId) {
+    this.patientService.deletePatient(patientId)
+      .subscribe(
+        (data) => {}, // No return value
+        (error) => console.log(error)
+      )
+  }
 }

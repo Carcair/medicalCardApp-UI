@@ -7,10 +7,17 @@
         fxLayoutAlign="space-around stretch"
         fxLayoutGap="2rem"
       >
-        <button routerLink="/" mat-button mat-raised-button color="primary">
+        <button
+          class="button"
+          routerLink="/"
+          mat-button
+          mat-raised-button
+          color="primary"
+        >
           Home
         </button>
         <button
+          class="button"
           routerLink="/patient"
           mat-button
           mat-raised-button
@@ -18,10 +25,21 @@
         >
           Review
         </button>
-        <button routerLink="/new" mat-button mat-raised-button color="primary">
+        <button
+          class="button"
+          routerLink="/new"
+          mat-button
+          mat-raised-button
+          color="primary"
+        >
           New
         </button>
-        <button mat-raised-button color="primary" (click)="logout()">
+        <button
+          class="button"
+          mat-raised-button
+          color="primary"
+          (click)="logout()"
+        >
           Logout
         </button>
       </div>
