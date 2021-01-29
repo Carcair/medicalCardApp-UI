@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
@@ -10,10 +11,17 @@ export class HomeComponent implements OnInit {
   username: string;
   password: string;
 
-  constructor(private loginService: LoginService) { }
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+  ) { }
 
   // Methods
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.loginService.check()) {
+      this.router.navigate(["/patient"]);
+    }
+  }
 
   login() {
     let tempObj = {
@@ -25,6 +33,7 @@ export class HomeComponent implements OnInit {
       .subscribe(
         data => {
           let token = this.loginService.extractToken(data);
+          this.router.navigate(["/patient"]);
           this.loginService.startSession(token);
         },
         error => {

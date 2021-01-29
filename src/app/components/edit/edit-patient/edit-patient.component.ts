@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from 'src/app/service/login/login.service';
 import { PatientService } from 'src/app/service/patient/patient.service';
 
 @Component({
@@ -12,10 +13,16 @@ export class EditPatientComponent implements OnInit {
 
   constructor(
     private patientService: PatientService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
+    private loginService: LoginService
   ) { }
 
   ngOnInit(): void {
+    if (!this.loginService.check()) {
+      this.router.navigate(["/"]);
+    }
+
     let id = this.route.snapshot.params.patientId;
 
     this.patientService.getPatient(id)

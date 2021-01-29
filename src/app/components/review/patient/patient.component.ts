@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/service/login/login.service';
 import { PatientService } from 'src/app/service/patient/patient.service';
 
 @Component({
@@ -10,9 +12,17 @@ export class PatientComponent implements OnInit {
   patients;
 
 
-  constructor(private patientService: PatientService) { }
+  constructor(
+    private patientService: PatientService,
+    private loginService: LoginService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    if (!this.loginService.check()) {
+      this.router.navigate(["/"]);
+    }
+
     this.patientService.getPatients()
       .subscribe(
         data => this.patients = data,

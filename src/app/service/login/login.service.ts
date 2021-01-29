@@ -41,4 +41,13 @@ export class LoginService {
   logout(): void {
     localStorage.removeItem("bearer_token");
   }
+
+  // Check session
+  check(): boolean {
+    if(localStorage.getItem("bearer_token")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

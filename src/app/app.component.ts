@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from './service/login/login.service';
 
 @Component({
@@ -8,8 +9,12 @@ import { LoginService } from './service/login/login.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
   opened: boolean = false;
+  state: boolean;
 
-  constructor(private loginService: LoginService) {}
+  constructor(
+    private loginService: LoginService,
+    private router: Router
+  ) {}
 
   // Methods
   ngOnInit() {}
@@ -19,5 +24,6 @@ export class AppComponent implements OnInit, OnDestroy {
   // Logout
   logout(): void {
     this.loginService.logout();
+    this.router.navigate(["/"]);
   }
 }
