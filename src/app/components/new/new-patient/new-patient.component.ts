@@ -21,7 +21,10 @@ export class NewPatientComponent implements OnInit {
     private router: Router
   ) { }
 
+  // Methods
+
   ngOnInit(): void {
+    // Check session validity
     if (!this.loginService.check()) {
       this.router.navigate(["/"]);
     }
@@ -39,7 +42,8 @@ export class NewPatientComponent implements OnInit {
 
     this.patientService.postNewPatient(tempObj)
       .subscribe(
-        (data) => {}, // No return data
+        // Redirect on successful input
+        (data) => this.router.navigate(["/patient"]), // No return data
         (error) => console.log(error)
       )
   }

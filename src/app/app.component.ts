@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './service/login/login.service';
 
@@ -24,6 +24,7 @@ export class AppComponent implements OnInit, OnDestroy {
   // Logout
   logout(): void {
     this.loginService.logout();
+    // Reroutin to home/login page
     this.router.navigate(["/"]);
   }
 }

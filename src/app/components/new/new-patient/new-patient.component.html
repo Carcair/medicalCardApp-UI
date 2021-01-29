@@ -1,25 +1,31 @@
 <div class="main" fxLayout="column" fxLayoutAlign="center center">
+  <!-- Add new patient form -->
   <div class="form" fxLayout="column" fxLayoutAlign="center center">
     <mat-form-field appearance="fill">
       <mat-label>First name</mat-label>
       <input matInput [(ngModel)]="firstName" />
     </mat-form-field>
+
     <mat-form-field appearance="fill">
       <mat-label>Last name</mat-label>
       <input matInput [(ngModel)]="lastName" />
     </mat-form-field>
+
     <mat-form-field appearance="fill">
       <mat-label>Card number</mat-label>
       <input matInput [(ngModel)]="cardNumber" />
     </mat-form-field>
+
     <mat-form-field appearance="fill">
       <mat-label>Address</mat-label>
       <input matInput [(ngModel)]="address" />
     </mat-form-field>
+
     <mat-form-field appearance="fill">
       <mat-label>Phone number</mat-label>
       <input matInput [(ngModel)]="phoneNumber" />
     </mat-form-field>
+
     <button
       class="button"
       mat-raised-button

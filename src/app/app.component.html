@@ -16,6 +16,7 @@
         >
           Home
         </button>
+
         <button
           class="button"
           routerLink="/patient"
@@ -25,6 +26,7 @@
         >
           Review
         </button>
+
         <button
           class="button"
           routerLink="/new"
@@ -34,6 +36,7 @@
         >
           New
         </button>
+
         <button
           class="button"
           mat-raised-button
@@ -44,6 +47,7 @@
         </button>
       </div>
     </mat-drawer>
+
     <mat-drawer-content fxLayout="column" fxLayoutAlign=" none">
       <app-header (navToggle)="mainNav.toggle()"></app-header>
       <router-outlet></router-outlet>

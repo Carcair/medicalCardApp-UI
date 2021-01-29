@@ -11,10 +11,11 @@ export class DiagnosisService {
   // Get all diagnosis
   getDiagnosis(patientId) {
     let token = localStorage.getItem("bearer_token");
+    
     return this.http.get(
-      '/server/api/v1/diagnosis/' + patientId,
+      "/server/api/v1/diagnosis/" + patientId,
       {
-        headers: new HttpHeaders().set('Authorization', token)
+        headers: new HttpHeaders().set("Authorization", token)
       }
     )
   }

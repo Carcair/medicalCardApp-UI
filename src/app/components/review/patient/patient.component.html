@@ -8,6 +8,8 @@
         <th fxFlex="25">Last name</th>
         <th fxFlex="25">Actions</th>
       </tr>
+
+      <!-- List all patients -->
       <tr
         *ngFor="let patient of patients"
         fxLayout="row"
@@ -29,6 +31,7 @@
           >
             edit
           </mat-icon>
+
           <mat-icon
             aria-hidden="false"
             aria-label="Example home icon"

@@ -13,7 +13,10 @@ export class NewComponent implements OnInit {
     private router: Router
   ) { }
 
+  // Methods
+
   ngOnInit(): void {
+    // Check session validity
     if (!this.loginService.check()) {
       this.router.navigate(["/"]);
     }

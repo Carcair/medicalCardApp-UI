@@ -22,16 +22,19 @@ export class DiagnosisComponent implements OnInit {
   ) { }
 
   // Methods
+
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.patientId = params.patientId
 
+      // Get patient info
       this.patientService.getPatient(this.patientId)
         .subscribe(
           data => this.patient = data,
           error => console.log(error)
         );
 
+      // Get patients diagnosis
       this.diagnosisService.getDiagnosis(this.patientId)
           .subscribe(
             data => {
@@ -43,6 +46,7 @@ export class DiagnosisComponent implements OnInit {
     })
   }
 
+  // Changing values based on selected diagnosis
   onChange() {
     this.selectedDiagnose = this.diagnosisArr[this.selectedDiagnoseId];
   }

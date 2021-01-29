@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewPatientComponent } from './components/new/new-patient/new-patient.component';
 import { NewDiagnosisComponent } from './components/new/new-diagnosis/new-diagnosis.component';
 import { EditPatientComponent } from './components/edit/edit-patient/edit-patient.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { EditPatientComponent } from './components/edit/edit-patient/edit-patien
     BrowserAnimationsModule,
     RoutingModule.forRoot(),
     FlexLayoutModule,
+    LayoutModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,

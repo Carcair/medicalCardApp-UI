@@ -10,6 +10,7 @@ import { LoginService } from 'src/app/service/login/login.service';
 export class HomeComponent implements OnInit {
   username: string;
   password: string;
+  display = "large";
 
   constructor(
     private loginService: LoginService,
@@ -21,6 +22,8 @@ export class HomeComponent implements OnInit {
     if (this.loginService.check()) {
       this.router.navigate(["/patient"]);
     }
+
+    
   }
 
   login() {

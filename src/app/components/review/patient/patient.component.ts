@@ -18,7 +18,10 @@ export class PatientComponent implements OnInit {
     private router: Router
   ) { }
 
+  // Methods
+
   ngOnInit(): void {
+    // Check session validity
     if (!this.loginService.check()) {
       this.router.navigate(["/"]);
     }
@@ -30,6 +33,7 @@ export class PatientComponent implements OnInit {
       )
   }
 
+  // Delete patient by id, backend service also deletes all his diagnosis
   deletePatient(patientId) {
     this.patientService.deletePatient(patientId)
       .subscribe(

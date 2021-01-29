@@ -18,11 +18,14 @@ export class EditPatientComponent implements OnInit {
     private loginService: LoginService
   ) { }
 
+  // Methods
+
   ngOnInit(): void {
+    // Check session validty
     if (!this.loginService.check()) {
       this.router.navigate(["/"]);
     }
-
+    
     let id = this.route.snapshot.params.patientId;
 
     this.patientService.getPatient(id)
@@ -34,6 +37,7 @@ export class EditPatientComponent implements OnInit {
 
   // Edit patient info
   editPatient(): void {
+    // New info
     let tempObj = {
       patientId: this.patient.patientId,
       firstName: this.patient.firstName,

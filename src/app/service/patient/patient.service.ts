@@ -11,10 +11,11 @@ export class PatientService {
   // Get All patients
   getPatients() {
     let token = localStorage.getItem("bearer_token");
+
     return this.http.get(
-      '/server/api/v1/patient',
+      "/server/api/v1/patient",
       {
-        headers: new HttpHeaders().set('Authorization', token)
+        headers: new HttpHeaders().set("Authorization", token)
       }
     )
   }
@@ -22,8 +23,9 @@ export class PatientService {
   // Get One patient
   getPatient(patientId) {
     let token = localStorage.getItem("bearer_token");
+
     return this.http.get(
-      '/server/api/v1/patient/' + patientId,
+      "/server/api/v1/patient/" + patientId,
       {
         headers: new HttpHeaders().set("Authorization", token)
       }
@@ -36,7 +38,7 @@ export class PatientService {
     let token = localStorage.getItem("bearer_token");
 
     return this.http.post(
-      '/server/api/v1/patient',
+      "/server/api/v1/patient",
       body,
       {
         headers: new HttpHeaders({
@@ -53,7 +55,7 @@ export class PatientService {
     let token = localStorage.getItem("bearer_token");
 
     return this.http.put(
-      '/server/api/v1/patient',
+      "/server/api/v1/patient",
       body,
       {
         headers: new HttpHeaders({

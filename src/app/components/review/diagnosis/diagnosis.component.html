@@ -1,6 +1,8 @@
 <div class="diagnosis" fxLayout="column" fxLayoutAlign="start stretch">
+  <!-- Basic patient info -->
   <div class="basic-info">
     <h2>Patient</h2>
+
     <div fxLayout="row" fxLayoutAlign="center stretch">
       <div fxFlex="50">
         <p>Name: {{ patient?.firstName }} {{ patient?.lastName }}</p>
@@ -13,8 +15,11 @@
       </div>
     </div>
   </div>
+
+  <!-- Diagnosis info -->
   <div class="diagnosis-info">
     <h2>Diagnosis</h2>
+
     <mat-form-field appearance="fill">
       <mat-label class="select">Date of diagnose</mat-label>
       <mat-select
@@ -33,14 +38,14 @@
 
     <div class="diagnose">
       <p>
-        Dijagnoza je uzeta na dan:
+        Diagnosis taken on:
         <span>{{ selectedDiagnose?.date }}</span>
       </p>
       <p>
-        Opis: <span>{{ selectedDiagnose?.diagnosis }}</span>
+        Description: <span>{{ selectedDiagnose?.diagnosis }}</span>
       </p>
       <p>
-        Preporuka i lijekovi:
+        Recommendation and prescriptions:
         <span>{{ selectedDiagnose?.medicine }}</span>
       </p>
     </div>

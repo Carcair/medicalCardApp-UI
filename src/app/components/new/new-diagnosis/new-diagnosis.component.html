@@ -1,7 +1,9 @@
 <div class="main" fxLayout="column" fxLayoutAlign="center center">
+  <!-- New Diagnosis page -->
   <div class="form" fxLayout="column" fxLayoutAlign="center center">
     <mat-form-field appearance="fill">
       <mat-label>Select patient</mat-label>
+
       <mat-select
         required
         [(ngModel)]="selectedPatientId"
@@ -15,14 +17,17 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
+
     <mat-form-field class="textarea" appearance="fill">
       <mat-label>Diagnosis</mat-label>
       <textarea rows="5" matInput [(ngModel)]="diagnosis"></textarea>
     </mat-form-field>
+
     <mat-form-field class="textarea" appearance="fill">
       <mat-label>Prescription</mat-label>
       <textarea rows="5" matInput [(ngModel)]="prescription"></textarea>
     </mat-form-field>
+
     <button
       class="button"
       mat-raised-button

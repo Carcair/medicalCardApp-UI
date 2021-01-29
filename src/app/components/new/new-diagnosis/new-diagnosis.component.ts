@@ -23,10 +23,12 @@ export class NewDiagnosisComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // Check validity of session
     if (!this.loginService.check()) {
       this.router.navigate(["/"]);
     }
 
+    // Getting diagnosis data for chosen patient
     this.patientService.getPatients()
       .subscribe(
         (data) => this.patients = data,
@@ -34,6 +36,7 @@ export class NewDiagnosisComponent implements OnInit {
       )
   }
 
+  // Observing value change
   onChange() {
     // console.log(this.selectedPatientId)
   }
@@ -48,7 +51,8 @@ export class NewDiagnosisComponent implements OnInit {
 
     this.diagnosisService.postNewDiagnosis(tempObj)
       .subscribe(
-        (data) => { console.log(data) }, // No return value
+        // Redirection on successful input
+        (data) => this.router.navigate(["/patient"]), // No return value
         (error) => console.log(error)
       )
   }

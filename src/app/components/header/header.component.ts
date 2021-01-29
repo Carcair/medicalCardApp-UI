@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Toggle sidenav bar
   @Output() navToggle: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   navOpen() {
