@@ -48,7 +48,7 @@ export class EditPatientComponent implements OnInit {
     }
     this.patientService.putPatient(tempObj)
       .subscribe(
-        (data) => {}, // no return data
+        (data) => this.router.navigate(["/patient"]), // no return data
         (error) => console.log(error)
       )
   }
