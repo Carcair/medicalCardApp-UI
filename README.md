@@ -8,6 +8,19 @@ Application is a demonstration of possible overview of patients, patient card cr
 
 Project emphasis is on the required technologies.
 
+## Tools and Technologies
+
+Required technologies for this project:
+
+- Java,
+- Maven,
+- Spring Framework (SpringBoot, SpringData, SpringSecurity)
+  - SpringSecurity used JWT authentication
+- Angular (Angular Material, and Angular Flex-Layout)
+- MySQL and Flyway for database migrations
+- Swagger (used Swagger2)
+- Unit tests (used jUnit5)
+
 ## Development server
 
 For a dev server:
@@ -29,4 +42,11 @@ node server.js
 
 Navigate to `http://localhost:4200/`.
 
-!!! Note. Backend Service must be running first. Read Main repository description first.
+!!! Note. Backend Service must be running first. Read Main repository description for full project information.
+
+## References
+
+Parent and sibling repositories at:
+
+- parent repository: https://github.com/Carcair/MedicalCardApp-parent
+- backend service repository: https://github.com/Carcair/medicalCardApp
