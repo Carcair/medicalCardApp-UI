@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/service/login/login.service';
+import { NewPatientValidationService } from 'src/app/service/validation/new-patient-validation.service';
+import { ErrorDialogComponent } from '../shared/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +17,9 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private newPatientValidationService: NewPatientValidationService,
+    private dialog: MatDialog
   ) { }
 
   // Methods
@@ -31,6 +36,13 @@ export class HomeComponent implements OnInit {
       username: this.username,
       password: this.password
     }
+
+    // Check for empty fields
+    if(!this.newPatientValidationService.checkNewInput(tempObj)) {
+      this.dialog.open(ErrorDialogComponent);
+      return;
+    }
+
 
     this.loginService.getToken(tempObj)
       .subscribe(

@@ -18,6 +18,7 @@ import { NewPatientComponent } from './components/new/new-patient/new-patient.co
 import { NewDiagnosisComponent } from './components/new/new-diagnosis/new-diagnosis.component';
 import { EditPatientComponent } from './components/edit/edit-patient/edit-patient.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ErrorDialogComponent } from './components/shared/error-dialog/error-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     NewPatientComponent,
     NewDiagnosisComponent,
     EditPatientComponent,
+    ErrorDialogComponent,
   ],
   imports: [
     BrowserModule,

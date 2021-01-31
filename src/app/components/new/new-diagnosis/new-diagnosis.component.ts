@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DiagnosisService } from 'src/app/service/diagnosis/diagnosis.service';
 import { LoginService } from 'src/app/service/login/login.service';
 import { PatientService } from 'src/app/service/patient/patient.service';
+import { NewPatientValidationService } from 'src/app/service/validation/new-patient-validation.service';
+import { ErrorDialogComponent } from '../../shared/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-new-diagnosis',
@@ -19,7 +22,9 @@ export class NewDiagnosisComponent implements OnInit {
     private patientService: PatientService,
     private diagnosisService: DiagnosisService,
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private newPatientValidationService: NewPatientValidationService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -47,6 +52,12 @@ export class NewDiagnosisComponent implements OnInit {
       patientId: this.selectedPatientId,
       diagnosis: this.diagnosis,
       medicine: this.prescription
+    }
+
+    // Check for empty fields
+    if (!this.newPatientValidationService.checkNewInput(tempObj)) {
+      this.dialog.open(ErrorDialogComponent);
+      return;
     }
 
     this.diagnosisService.postNewDiagnosis(tempObj)

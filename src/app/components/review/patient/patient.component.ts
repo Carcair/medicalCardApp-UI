@@ -34,10 +34,14 @@ export class PatientComponent implements OnInit {
   }
 
   // Delete patient by id, backend service also deletes all his diagnosis
-  deletePatient(patientId) {
+  deletePatient(patientId, event) {
+    // Parent element has its own event
+    // We are blocking that event here
+    event.stopPropagation();
+
     this.patientService.deletePatient(patientId)
       .subscribe(
-        (data) => {}, // No return value
+        (data) => this.router.navigate(["/"]), // No return value
         (error) => console.log(error)
       )
   }

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/service/login/login.service';
 import { PatientService } from 'src/app/service/patient/patient.service';
+import { NewPatientValidationService } from 'src/app/service/validation/new-patient-validation.service';
+import { ErrorDialogComponent } from '../../shared/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-new-patient',
@@ -14,11 +17,14 @@ export class NewPatientComponent implements OnInit {
   cardNumber: string;
   address: string;
   phoneNumber: string;
+  errors: boolean;
 
   constructor(
     private patientService: PatientService,
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private newPatientValidationService: NewPatientValidationService,
+    private dialog: MatDialog,
   ) { }
 
   // Methods
@@ -39,6 +45,12 @@ export class NewPatientComponent implements OnInit {
       address: this.address,
       phoneNumber: this.phoneNumber
     }
+
+    // Check for empty fields
+    if (!this.newPatientValidationService.checkNewInput(tempObj)) {
+      this.dialog.open(ErrorDialogComponent);
+      return;
+    };
 
     this.patientService.postNewPatient(tempObj)
       .subscribe(
